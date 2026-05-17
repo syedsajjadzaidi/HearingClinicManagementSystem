@@ -40,7 +40,7 @@ namespace HearingClinicManagementSystem.Data
         //{
         //    return _context.Users.ToList();
         //}
-
+        #region User Management Methods
         public User GetUserById(int id)
         {
             return _context.Users.Find(id);
@@ -143,7 +143,9 @@ namespace HearingClinicManagementSystem.Data
                 .Include(cm => cm.User)
                 .FirstOrDefault(cm => cm.UserID == userId);
         }
+        #endregion
 
+        #region Product Management Methods
         public List<Product> GetAllProducts()
         {
             return _context.Products.ToList();
@@ -506,7 +508,9 @@ namespace HearingClinicManagementSystem.Data
             
             return result;
         }
+        #endregion
 
+        #region Appointment Management Methods
         public List<Appointment> GetAppointmentsByPatientId(int patientId)
         {
             return _context.Appointments
@@ -616,7 +620,9 @@ namespace HearingClinicManagementSystem.Data
             
             return availableSlots;
         }
+        #endregion
 
+        #region Medical Record Management Methods
         public List<MedicalRecord> GetMedicalRecordsByPatientId(int patientId)
         {
             return _context.MedicalRecords
@@ -661,6 +667,9 @@ namespace HearingClinicManagementSystem.Data
                 .ToList();
         }
 
+        #endregion
+
+        #region Inventory Management Methods
         // Product management specific methods
         public List<Product> GetProductsOrderedByManufacturerAndModel() {
             return _context.Products
@@ -757,13 +766,17 @@ namespace HearingClinicManagementSystem.Data
             }
         }
 
+
+
         //public int GetNextProductId() {
         //    if (!_context.Products.Any())
         //        return 1;
 
         //    return _context.Products.Max(p => p.ProductID) + 1;
         //}
+        #endregion
 
+        #region 
         public List<dynamic> GetActivePatients()
         {
             return _context.Patients
@@ -2646,4 +2659,5 @@ namespace HearingClinicManagementSystem.Data
             _context?.Dispose();
         }
     }
+    #endregion
 }

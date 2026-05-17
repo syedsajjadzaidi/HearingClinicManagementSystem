@@ -36,12 +36,12 @@
             // 2. Clinic Manager user
             var clinicManagerUser = new User {
                 UserID = 2,
-                FirstName = "John",
-                LastName = "Director",
-                Email = "john.director@hearingclinic.com",
-                Phone = "555-222-3333",
+                FirstName = "Sajjad",
+                LastName = "Zaidi",
+                Email = "sajjad.zaidi@hearingclinic.com",
+                Phone = "0329387464839",
                 Role = "ClinicManager",
-                Username = "john.director",
+                Username = "sajjad.director",
                 PasswordHash = "password123",
                 IsActive = true
             };
@@ -49,12 +49,12 @@
             // 3. Audiologist 1 user
             var audiologist1User = new User {
                 UserID = 3,
-                FirstName = "Sarah",
-                LastName = "Hearing",
-                Email = "sarah.hearing@hearingclinic.com",
-                Phone = "555-333-4444",
+                FirstName = "Summaya",
+                LastName = "Rao",
+                Email = "summaya.rao@hearingclinic.com",
+                Phone = "0392739389",
                 Role = "Audiologist",
-                Username = "sarah.hearing",
+                Username = "summaya.rao",
                 PasswordHash = "password123",
                 IsActive = true
             };
@@ -88,12 +88,12 @@
             // 6. Receptionist user
             var receptionistUser = new User {
                 UserID = 4,
-                FirstName = "Emily",
+                FirstName = "Zainab",
                 LastName = "Reception",
-                Email = "emily.reception@hearingclinic.com",
-                Phone = "555-444-5555",
+                Email = "zainab.reception@hearingclinic.com",
+                Phone = "0393837382",
                 Role = "Receptionist",
-                Username = "emily.reception",
+                Username = "zainab.reception",
                 PasswordHash = "password123",
                 IsActive = true
             };
@@ -101,12 +101,12 @@
             // 7. Inventory Manager user
             var inventoryManagerUser = new User {
                 UserID = 5,
-                FirstName = "Mark",
-                LastName = "Inventory",
-                Email = "mark.inventory@hearingclinic.com",
-                Phone = "555-555-6666",
+                FirstName = "Ahmed",
+                LastName = "Junaid",
+                Email = "ahmed.junaid@hearingclinic.com",
+                Phone = "0392873893",
                 Role = "InventoryManager",
-                Username = "mark.inventory",
+                Username = "ahmed.inventory",
                 PasswordHash = "password123",
                 IsActive = true
             };
@@ -114,13 +114,25 @@
             // 8. Patient user
             var patientUser = new User {
                 UserID = 6,
-                FirstName = "Robert",
-                LastName = "Patient",
-                Email = "robert@example.com",
+                FirstName = "Umer",
+                LastName = "Aziz",
+                Email = "umer@example.com",
                 Phone = "555-777-8888",
                 Role = "Patient",
-                Username = "robert.patient",
+                Username = "umer.aziz",
                 PasswordHash = "password123",
+                IsActive = true
+            };
+            var receptionist2User = new User
+            {
+                UserID = 11, // Ensure this is unique
+                FirstName = "Priya",
+                LastName = "Sharma",
+                Email = "priya.sharma@hearingclinic.com",
+                Phone = "555-444-7777",
+                Role = "Receptionist",
+                Username = "priya.sharma",
+                PasswordHash = "password123", // In production, use a hashed password
                 IsActive = true
             };
 
@@ -132,6 +144,7 @@
                 audiologist2User,
                 audiologist3User,
                 receptionistUser,
+                receptionist2User,
                 inventoryManagerUser,
                 patientUser
             );
@@ -177,6 +190,11 @@
                 new Receptionist {
                     ReceptionistID = 1,
                     UserID = receptionistUser.UserID
+                },
+                new Receptionist
+                {
+                    ReceptionistID = 2,
+                    UserID = receptionistUser.UserID
                 }
             );
 
@@ -199,6 +217,18 @@
                     Address = "123 Maple St, Springfield, IL 62701"
                 }
             );
+            var receptionistUser2 = new User
+            {
+                UserID = 9, 
+                FirstName = "Anna",
+                LastName = "Frontdesk",
+                Email = "anna.frontdesk@hearingclinic.com",
+                Phone = "555-444-6666",
+                Role = "Receptionist",
+                Username = "anna.frontdesk",
+                PasswordHash = "password123", 
+                IsActive = true
+            };
 
             // Save changes to database
             context.SaveChanges();

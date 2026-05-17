@@ -1000,5 +1000,17 @@ namespace HearingClinicManagementSystem.UI.Audiologist
                 rightAudiogramPanel.Invalidate();
         }
         #endregion
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // AudiogramViewForm
+            // 
+            this.ClientSize = new System.Drawing.Size(1931, 792);
+            this.Name = "AudiogramViewForm";
+            this.ResumeLayout(false);
+
+        }
     }
 }

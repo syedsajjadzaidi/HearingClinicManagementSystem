@@ -11,7 +11,7 @@ namespace HearingClinicManagementSystem.UI.Constants
         public static class Titles
         {
             public const string AppTitle = "Hearing Clinic Management System";
-            public const string Dashboard = "Dashboard";
+            public const string Dashboard = "Welcome to Professional Hearing Solutions";
             public const string ManageAppointment = "Manage Appointments";
             public const string PurchaseHearingAid = "Purchase Hearing Aids";
             public const string MedicalHistory = "Medical History";

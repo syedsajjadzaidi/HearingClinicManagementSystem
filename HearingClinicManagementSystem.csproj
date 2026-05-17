@@ -203,6 +203,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI\Audiologist\AudiogramViewForm.resx">
+      <DependentUpon>AudiogramViewForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Forms\DashboardForm.resx">
       <DependentUpon>DashboardForm.cs</DependentUpon>
       <SubType>Designer</SubType>
